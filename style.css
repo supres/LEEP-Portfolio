@@ -1,0 +1,202 @@
+/* Declaring Variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --text-color: #333;
+  --bg-color: #f8f9fa;
+  --font-family: "Roboto", sans-serif;
+}
+
+/* Base */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.2;
+  scroll-behavior: smooth;
+}
+
+/* Affects ALL SECTIONS */
+section {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh; /* try auto if its overlapping vertically */
+  background: url("assets/RedFish\ 05-25-24.jpg") no-repeat center/cover;
+  color: black;
+  position: relative;
+  text-align: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+header .content {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  animation: fadeInDown 1s forwards;
+}
+
+header p {
+  font-size: 1.5em;
+  animation: fadeInUp 1s forwards;
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 1;
+}
+
+/* Text */
+section h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: var(--primary-color);
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: var(--primary-color);
+  display: block;
+  margin: 0.5em auto 0;
+}
+
+/* About Section */
+#about {
+  /*# targets ids with "about" */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#about img {
+  /* targets all <img> elements where id = about */
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  max-width: 600px;
+  margin: 20px;
+  line-height: 1.5;
+}
+
+/* Education */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.education-item {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.education-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.education-item p,
+.education-item ul li {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.education-item ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0;
+  display: inline-block;
+}
+
+.education-item li {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.skill {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: #fff;
+  font-size: 1em;
+  border-radius: 5px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+/* Links */
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.link-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.link-button:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
