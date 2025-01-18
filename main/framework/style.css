@@ -95,18 +95,6 @@ header p {
   animation: fadeInUp 1s forwards;
 }
 
-.down-arrow {
-  position: absolute;
-  bottom: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2em;
-  color: var(--secondary-color);
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  z-index: 1;
-}
-
 /* Text */
 section h2 {
   font-size: 2.5em;
