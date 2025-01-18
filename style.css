@@ -7,8 +7,45 @@
   --font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: var(--bg-color);
+  position:fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+}
+
+nav ul li a:hover {
+  background-color: var(--secondary-color);
+}
+
 /* Base */
 body {
+  padding-top: 3px;
   font-family: var(--font-family);
   color: var(--text-color);
   background: var(--bg-color);
@@ -28,9 +65,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 35vh; /* try auto if its overlapping vertically */
-  background: url("assets/RedFish\ 05-25-24.jpg") no-repeat center/cover;
-  color: black;
+  color: var(--primary-color);
   position: relative;
   text-align: center;
 }
@@ -42,7 +77,6 @@ header::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 header .content {
@@ -63,11 +97,11 @@ header p {
 
 .down-arrow {
   position: absolute;
-  bottom: 20px;
+  bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2em;
-  color: #fff;
+  color: var(--secondary-color);
   cursor: pointer;
   animation: bounce 2s infinite;
   z-index: 1;
@@ -199,4 +233,109 @@ section h2::after {
 .link-button:hover {
   background: var(--secondary-color);
   transform: scale(1.05);
+}
+
+/* Project (carousel) */
+
+#projects {
+  position: relative;
+}
+
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-item a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.education-item a:hover h3 {
+  color: var(--primary-color);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+.carousel-btn.right {
+  right: 10px;
+}
+.carousel-btn:hover {
+  background: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -10px);
+  }
+  60% {
+    transform: translate(-50%, -5px);
+  }
 }
