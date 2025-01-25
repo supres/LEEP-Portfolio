@@ -1,51 +1,139 @@
 /* Declaring Variables */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #0056b3;
-  --text-color: #333;
+  --primary-color: #605f5e;
+  --secondary-color: #1d3461;
+  --text-color: #247ba0;
   --bg-color: #f8f9fa;
-  --font-family: "Roboto", sans-serif;
+  --font-family: "Montserrat", Helvetica, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Navigation Bar */
-nav {
-  background-color: var(--bg-color);
-  position:fixed;
+html,
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Bar */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: var(--primary-color);
+  height: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease; 
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
-nav ul li a:hover {
-  background-color: var(--secondary-color);
+a.active,
+a:hover {
+  background: var(--secondary-color);
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: var(--secondary-color);
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
 }
 
 /* Base */
 body {
-  padding-top: 3px;
   font-family: var(--font-family);
   color: var(--text-color);
   background: var(--bg-color);
@@ -61,13 +149,19 @@ section {
   padding: 50px 20px;
 }
 
+/* All things Header */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; /* Enables flexbox layout */
+  justify-content: space-between; /* Positions child elements to opposite ends */
+  align-items: center; /* Vertically centers the elements */
+  padding: 20px; /* Adds padding inside the header */
+}
+
+header h1 {
   color: var(--primary-color);
-  position: relative;
-  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  margin-left: 5%;
 }
 
 header::before {
@@ -84,17 +178,32 @@ header .content {
   z-index: 1;
 }
 
-header h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
-  animation: fadeInDown 1s forwards;
-}
-
 header p {
   font-size: 1.5em;
   animation: fadeInUp 1s forwards;
 }
 
+.subtitle-text {
+  padding: 0;
+  margin: 0;
+}
+
+.word1,
+.word2,
+.word3 {
+  display: block; /* Ensure they are block-level elements and stack vertically */
+  margin-bottom: -8px; /* Adjust the spacing between words as needed */
+}
+
+#background-pic {
+  display: flex;
+  justify-content: flex-end; /* Aligns the image to the right */
+}
+
+img {
+  max-width: 500px; /* Adjust the size of the image as needed */
+  height: auto;
+}
 /* Text */
 section h2 {
   font-size: 2.5em;
@@ -115,6 +224,7 @@ section h2::after {
 /* About Section */
 #about {
   /*# targets ids with "about" */
+  background-color: var(--primary-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
