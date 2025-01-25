@@ -17,7 +17,23 @@ body {
   padding: 0;
   width: 100%;
 }
+/* Home Logo */
+.home-logo {
+  font-size: 40px;
+  position: fixed;
+  bottom: 20px;
+  left: 50px;
+  height: 50px;
+  z-index: 1000;
+  cursor: pointer;
+  color: var(--primary-color);
+}
 
+.home-logo:hover{
+  transform: scale(1.2);
+  color: var(--secondary-color);
+  transition: transform 0.2s color 0.2s;
+}
 /* Navigation Bar */
 * {
   padding: 0;
@@ -70,8 +86,8 @@ nav ul li a {
   text-transform: uppercase;
 }
 
-a.active,
-a:hover {
+nav a.active,
+nav a:hover {
   background: var(--secondary-color);
   transition: 0.5s;
 }
@@ -160,17 +176,8 @@ header {
 header h1 {
   color: var(--primary-color);
   font-size: 3em;
-  margin-bottom: 0.5em;
+  margin-bottom: 50px;
   margin-left: 5%;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 header .content {
@@ -178,21 +185,30 @@ header .content {
   z-index: 1;
 }
 
-header p {
+.logo,
+.subtitle-text {
   font-size: 1.5em;
   animation: fadeInUp 1s forwards;
 }
 
 .subtitle-text {
   padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 
 .word1,
 .word2,
 .word3 {
-  display: block; /* Ensure they are block-level elements and stack vertically */
-  margin-bottom: -8px; /* Adjust the spacing between words as needed */
+  display: block; 
+  margin-bottom: -8px; 
+}
+
+.descp-text {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  align-items: center;
+  justify-content: center;
+  margin: 50px
 }
 
 #background-pic {
@@ -200,8 +216,8 @@ header p {
   justify-content: flex-end; /* Aligns the image to the right */
 }
 
-img {
-  max-width: 500px; /* Adjust the size of the image as needed */
+header img {
+  max-width: 500px; /* Adjust the size of the image */
   height: auto;
 }
 /* Text */
