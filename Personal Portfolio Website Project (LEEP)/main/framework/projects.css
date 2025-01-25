@@ -1,0 +1,152 @@
+/* Root Variables */
+:root {
+  --primary-color: #22577A; /* Deep blue */
+  --secondary-color: #163950; /* Darker blue */
+  --text-color: black;
+  --bg-color: white;
+  --font-family: "Montserrat", Helvetica, sans-serif;
+  --hover-color: #1a4b6e; /* Darker hover state for interactive elements */
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header */
+.project-header {
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.project-header h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.project-header p {
+  font-size: 1.2em;
+  margin-top: 15px;
+}
+
+/* Project Content Section */
+#project-content {
+  padding: 60px 20px;
+  background-color: var(--bg-color);
+  flex: 1; /* Allows this section to grow and take up available space */
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.project-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  max-width: 600px;
+  margin-left: 40px;
+}
+
+.content h2 {
+  color: var(--primary-color);
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--primary-color);
+}
+
+.content ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.links-container {
+  margin-top: 20px;
+}
+
+.link-button {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.link-button i {
+  margin-right: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--secondary-color);
+  color: white;
+  margin-top: auto; /* Pushes footer to the bottom of the page */
+}
+
+footer p {
+  font-size: 1.2em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .project-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-img {
+    max-width: 100%;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
